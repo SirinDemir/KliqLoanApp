@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// Stil bilgisini closure ile tutar ve hedef nesneye uygular.
 public struct Style<T> {
     public let apply: (T) -> Void
 

@@ -18,7 +18,5 @@ public final class MockLoanService: LoanServiceProtocol {
         return try JSONDecoder().decode([Loan].self, from: data)
     }
     
-    public func persistLoans(_ loans: [Loan]) async throws {
-        // Mock persistence - no-op
-    }
+    public func persistLoans(_ loans: [Loan]) async throws {}
 }

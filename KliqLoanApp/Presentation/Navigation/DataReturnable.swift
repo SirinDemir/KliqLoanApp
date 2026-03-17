@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// Dışarıdan veri alacak ekranların implement ettiği protokol.
 public protocol DataReturnable: AnyObject {
     func prepareInjectData(_ data: ModelTransferable?)
 }

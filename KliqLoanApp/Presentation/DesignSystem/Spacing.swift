@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// Small = 4 olan spacing ölçeği.
 public enum Spacing: CGFloat, CaseIterable {
     case small = 4
     case medium = 8
@@ -16,7 +15,6 @@ public enum Spacing: CGFloat, CaseIterable {
     case xxLarge = 20
 }
 
-/// Köşe yuvarlama değerleri.
 public enum CornerRadius: CGFloat, CaseIterable {
     case small = 8
     case medium = 12

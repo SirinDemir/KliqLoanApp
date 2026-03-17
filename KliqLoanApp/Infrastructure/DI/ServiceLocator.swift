@@ -13,22 +13,22 @@ public final class ServiceLocator {
 
     private init() {}
 
-    /// Servisi Service Locator'a kaydeder. ObjectIdentifier ile tip çakışması önlenir.
+    //Servisi Service Locator'a kaydeder. ObjectIdentifier ile tip çakışması önlenir.
     public func register<T>(_ service: T) {
         services[ObjectIdentifier(T.self)] = service
     }
 
-    /// Servisi belirtilen tip için kaydeder (protokol çözümlemesi için).
+    // Servisi belirtilen tip için kaydeder (protokol çözümlemesi için).
     public func register<T>(_ service: T, as type: T.Type) {
         services[ObjectIdentifier(type)] = service
     }
 
-    /// Service Locator'dan servisi çözümler.
+    // Service Locator'dan servisi çözümler.
     public func resolve<T>(_ type: T.Type) -> T? {
         services[ObjectIdentifier(type)] as? T
     }
 
-    /// Servisi bulur; yoksa creator ile oluşturur, kaydeder ve döner.
+    // Servisi bulur; yoksa creator ile oluşturur, kaydeder ve döner.
     public func resolveOrCreate<T>(_ type: T.Type, creator: @escaping () -> T) -> T {
         if let service = resolve(type) {
             return service

@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// Login'den Home'a aktarılacak kullanıcı verisi.
 public struct UserTransferData: ModelTransferable {
     public let email: String
     public let username: String?

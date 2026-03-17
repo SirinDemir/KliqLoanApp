@@ -34,9 +34,9 @@ public final class HomeViewModel: BaseViewModel, DataReturnable, CompletionHandl
     @Published public var totalAmount: String = "$0"
     @Published public var loanCountText: String = Keys.Home.loansInPortfolio(0)
     @Published public var avgRateText: String = Keys.Home.avgInterestRateDefault
-    /// Router'dan aktarılan kullanıcı email (DataReturnable - makale).
+    
     public private(set) var transferredUserEmail: String?
-    /// Veri dönüşü callback (CompletionHandling - makale).
+    
     public var completionDataHandler: CompletionDataHandler?
 
     private let loanReactive: LoanReactiveProtocol?
@@ -70,7 +70,6 @@ public final class HomeViewModel: BaseViewModel, DataReturnable, CompletionHandl
         completionDataHandler = handler
     }
 
-    /// Observer: loadTrigger -> flatMap (loans Observable) -> receiveValue. Makaledeki flatMap kullanımı.
     private func bindLoansObserver() {
         guard let loanReactive else { return }
         loadTrigger
@@ -98,7 +97,6 @@ public final class HomeViewModel: BaseViewModel, DataReturnable, CompletionHandl
     }
     
     private func applyFilter() {
-        // filter: makaledeki gibi koşula göre süzme.
         switch selectedFilter {
         case .all: filteredLoans = allLoans
         case .active: filteredLoans = allLoans.filter { $0.status == "active" }

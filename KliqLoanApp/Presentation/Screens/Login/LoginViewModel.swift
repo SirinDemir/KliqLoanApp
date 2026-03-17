@@ -10,7 +10,7 @@ import Combine
 
 @MainActor
 public final class LoginViewModel: BaseViewModel, ValidationHandler {
-    /// Sadece validasyon sonuçları tutulur; email/password ViewModel'de hiç tutulmaz (callback ile gelir).
+    
     @Published public var emailValidation: ValidationResult?
     @Published public var passwordValidation: ValidationResult?
 

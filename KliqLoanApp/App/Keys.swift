@@ -15,8 +15,6 @@ public enum Keys {
     private static var cache: [String: String] = [:]
     private static let cacheLock = NSLock()
 
-    /// String Catalog'dan okur; key yoksa default döner. (Localizable.xcstrings)
-    /// İlk erişimde önbelleğe alınır; body tekrar çalıştığında main thread'de tekrar Bundle okunmaz.
     public static func localized(key: String, default defaultValue: String, table: String = "Localizable", bundle: Bundle = .main) -> String {
         let cacheKey = "\(table).\(key)"
         cacheLock.lock()

@@ -9,7 +9,6 @@ import Foundation
 import Combine
 
 public protocol LoanReactiveProtocol {
-    /// Kredi listesini Observable (Publisher) olarak döner; flatMap ile tetiklenebilir.
     func processAndUpdateLoans() -> AnyPublisher<[Loan], Error>
 }
 

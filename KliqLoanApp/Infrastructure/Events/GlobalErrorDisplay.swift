@@ -17,7 +17,6 @@ public final class GlobalErrorDisplay: ObservableObject {
 
     private init() {}
 
-    /// Hata geldiğinde çağrılır; alert otomatik gösterilir (RootView üzerinden).
     public func showError(_ message: String) {
         errorMessage = message.isEmpty ? nil : message
         showErrorAlert = true

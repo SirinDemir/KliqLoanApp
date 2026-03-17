@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// Veri transferi sırasında kullanılacak modellerin protokolü.
 public protocol ModelTransferable {
     func describe() -> String
 }

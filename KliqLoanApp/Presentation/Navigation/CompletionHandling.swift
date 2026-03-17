@@ -9,7 +9,6 @@ import Foundation
 
 public typealias CompletionDataHandler = (ModelTransferable) -> Void
 
-/// Veri döndürecek ekranların implement ettiği protokol.
 public protocol CompletionHandling: AnyObject {
     func setCompletionDataHandler(_ handler: @escaping CompletionDataHandler)
 }

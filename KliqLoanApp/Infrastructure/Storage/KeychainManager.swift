@@ -35,7 +35,6 @@ public enum KeychainManager {
         if status == errSecDuplicateItem {
             update(data, forKey: key)
         }
-        // status != errSecSuccess durumunda production'da log/crash raporu tercih edilebilir
     }
 
     public static func load(forKey key: String) -> Data? {
@@ -64,7 +63,6 @@ public enum KeychainManager {
         ]
 
         _ = SecItemDelete(query as CFDictionary)
-        // errSecSuccess / errSecItemNotFound dışı durumlarda isteğe bağlı log
     }
 
     private static func update(_ data: Data, forKey key: String) {
@@ -79,6 +77,5 @@ public enum KeychainManager {
         ]
 
         _ = SecItemUpdate(query as CFDictionary, attributes as CFDictionary)
-        // status != errSecSuccess isteğe bağlı log
     }
 }

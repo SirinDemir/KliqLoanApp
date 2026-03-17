@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 public protocol AuthReactiveProtocol {
-    /// Login sonucunu Observable (Publisher) olarak döner; Observer .sink ile abone olur.
+    
     func login(email: String, password: String) -> AnyPublisher<Bool, Error>
     func logout() -> AnyPublisher<Void, Never>
     var isLoggedIn: Bool { get }
@@ -26,7 +26,6 @@ public final class AuthReactive: AuthReactiveProtocol {
         authService.isLoggedIn
     }
 
-    /// Observable.create benzeri: Next (success) veya Error yayınlar, Completed ile biter.
     public func login(email: String, password: String) -> AnyPublisher<Bool, Error> {
         Deferred {
             Future<Bool, Error> { [weak self] promise in

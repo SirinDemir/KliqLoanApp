@@ -16,9 +16,7 @@ public final class Router: ObservableObject {
 
     private let authService: AuthServiceProtocol
 
-    /// Navigasyonda hedef ekrana aktarılacak veri (makale: withTransferedData).
     private(set) public var pendingTransferData: ModelTransferable?
-    /// Hedef ekrandan veri dönüşü için callback (makale: withDataHandler).
     private var pendingCompletionHandler: CompletionDataHandler?
 
     public init(authService: AuthServiceProtocol) {

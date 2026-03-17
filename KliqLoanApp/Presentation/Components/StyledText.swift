@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// TextStyleProvider ile stil uygulanmış metin görünümü (makale: BaseLabel).
 public struct StyledText<Provider: TextStyleProvider>: View {
     private let text: String
     private let provider: Provider

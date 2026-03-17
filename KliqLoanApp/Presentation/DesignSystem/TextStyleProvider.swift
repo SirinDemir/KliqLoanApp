@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// Metin stilleri için sağlayıcı protokolü (makale: LabelStyleProvider).
 public protocol TextStyleProvider {
     var font: Font { get }
     var foregroundColor: Color { get }
